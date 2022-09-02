@@ -1,21 +1,23 @@
-import { useSelector } from "react-redux"
-
-
+import { useDispatch, useSelector } from "react-redux"
+import { increment, increment_5, decrement, decrement_5, reset } from '../actions/actionReducer'
 
 const Counter = () => {
+    const dispatch = useDispatch()
 
     const state = useSelector(state => state.counter)
     const { count } = state
 
-    console.log(state);
     return (
         <>
             <h1>Contador</h1>
-            <button>+</button>
-            <button>+5</button>
+            <button onClick={() => dispatch(increment())}>+</button>
+            <button onClick={() => dispatch(increment_5())}>+5</button>
             <p>{count}</p>
-            <button>-</button>
-            <button>-5</button>
+            <button onClick={() => dispatch(decrement())}>-</button>
+            <button onClick={() => dispatch(decrement_5())}>-5</button>
+            <div>
+                <button onClick={() => dispatch(reset())}>Reset</button>
+            </div>
         </>
     )
 }

@@ -26,8 +26,8 @@ export const counterReducer = (state = initialState, action) => {
         case MULTIPLY:
             return { ...state, count: state.count * 2 };
         case RESET:
-            return { ...state, count: state.count = 0 };
-            // return initialState
+            // return { ...state, count: state.count = 0 };
+            return initialState
 
         default:
             return state;

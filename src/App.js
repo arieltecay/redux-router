@@ -1,12 +1,16 @@
 
 import './App.css';
-import Counter from './pages/Counter';
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from './routes/AppRoutes';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Redux - Router</h1>
-      <Counter />
+      <BrowserRouter>
+        <h1>Redux - Router</h1>
+        <AppRoutes />
+      </BrowserRouter>
     </div>
   );
 }
